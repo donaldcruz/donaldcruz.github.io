@@ -1,0 +1,27 @@
+[
+    {
+        "video": "b04.mp4",
+        "poster": "b04.jpg",
+        "title": "Big One Four"
+    },
+    {
+        "video": "sammy-showcase.mp4",
+        "poster": "sammy-showcase.jpg",
+        "title": "Sammy Showcase 2023"
+    },
+    {
+        "video": "wantake-one.mp4",
+        "poster": "wantake-one.jpg",
+        "title": "WanTake 1"
+    },
+    {
+        "video": "wantake-two.mp4",
+        "poster": "wantake-two.jpg",
+        "title": "WanTake 2"
+    },
+    {
+        "video": "wantake-three.mp4",
+        "poster": "wantake-three.jpg",
+        "title": "Wantake 3"
+    }
+]
