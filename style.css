@@ -563,6 +563,22 @@ header nav ul>li a {
     animation-delay: var(--transition-medium);
 }
 
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: var(--no-opacity);
+    width: var(--button-icon-size);
+    height: var(--button-icon-size);
+    transform: translate(-50%, -50%) rotate(0);
+    border-radius: 50%;
+    background: url('./icons/loader.svg') no-repeat center;
+    background-size: contain;
+    transition: var(--transition-medium) ease;
+    animation: spinLoader var(--transition-fast) ease infinite;
+    z-index: 10;
+}
+
 @keyframes showThumbnails {
     0% {
         opacity: var(--no-opacity);
@@ -572,6 +588,17 @@ header nav ul>li a {
     100% {
         opacity: var(--full-opacity);
         top: unset;
+    }
+}
+
+@keyframes spinLoader {
+    0% {
+        opacity: var(--full-opacity);
+        transform: translate(-50%, -50%) rotate(0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 

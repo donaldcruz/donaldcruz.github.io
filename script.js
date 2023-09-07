@@ -51,19 +51,17 @@ class MainScript{
             });
         }
 
-        ['DOMContentLoaded','resize'].forEach(event => {
-            window.addEventListener(event, () => {
-                this.navMenuItems.forEach(navMenu => {
-                    navMenu.addEventListener('click', (event) => {
-                        event.preventDefault();
-                        this.menuIcon.classList.remove('active');
-                        if(window.innerWidth <= 1023){
-                            this.nav.setAttribute(`style`,`max-height: 0`);
-                        }
-                    });
+        // only do this on mobile and tablet screens
+        if(window.innerWidth <= 1023){
+            this.navMenuItems.forEach(navMenu => {
+                navMenu.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    this.menuIcon.classList.remove('active');
+                    this.nav.classList.remove('sliding-nav');
+                    this.nav.removeAttribute('style');
                 });
             });
-        });
+        }
     }
     scrollToSection(){
         this.navMenuItems.forEach(navMenu => {
@@ -176,6 +174,13 @@ class MainScript{
                 this.currentVideo.parentElement.classList.remove('paused');
                 this.currentVideo.parentElement.classList.remove('playing');
             }
+
+            const loader = document.createElement('div');
+            loader.className = 'loader';
+            this.currentVideo.parentElement.appendChild(loader);
+            setTimeout(() => {
+                this.currentVideo.parentElement.removeChild(loader);
+            }, this.INTERVAL);
         })
     }
     contactMe(){
