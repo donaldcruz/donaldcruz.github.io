@@ -464,7 +464,7 @@ header nav ul>li a {
 .video-carousel {
     position: relative;
     overflow: hidden;
-    border: 2px solid var(--color-dark-grey);
+    /* border: 2px solid var(--color-dark-grey); */
     border-radius: 0.5rem;
 }
 
