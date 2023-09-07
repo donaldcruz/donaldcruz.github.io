@@ -56,6 +56,7 @@ class MainScript{
                 this.navMenuItems.forEach(navMenu => {
                     navMenu.addEventListener('click', (event) => {
                         event.preventDefault();
+                        this.menuIcon.classList.remove('active');
                         if(window.innerWidth <= 1023){
                             this.nav.setAttribute(`style`,`max-height: 0`);
                         }
@@ -68,7 +69,6 @@ class MainScript{
         this.navMenuItems.forEach(navMenu => {
             navMenu.addEventListener('click', (event) => {
                 event.preventDefault();
-                this.menuIcon.classList.remove('active');
                 let currentLink = navMenu.href.split('/')[3];
                 let targetElement = document.querySelector(`.content-body ${currentLink}`);
                 setTimeout(() => {
