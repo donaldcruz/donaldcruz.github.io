@@ -11,6 +11,7 @@ class MainScript{
         this.nav = document.querySelector('nav');
         this.currentVideo = document.querySelector('.video-carousel video');
         this.navMenuItems = document.querySelectorAll('header nav ul>li a');
+        this.menuIcon = document.querySelector('.menu-icon');
         this.typeIndex = 0;
         this.typeSpeed = 80;
         this.INTERVAL = 1000;
@@ -34,11 +35,11 @@ class MainScript{
         this.contactMe();
     }
     mobileMenu(){
-        const menuIcon = document.querySelector('.menu-icon');
-        if(menuIcon != undefined){
-            menuIcon.addEventListener('click', () => {
 
-                menuIcon.classList.toggle('active');
+        if(this.menuIcon != undefined){
+            this.menuIcon.addEventListener('click', () => {
+
+                this.menuIcon.classList.toggle('active');
 
                 if(this.nav.style.maxHeight){
                     this.nav.style.maxHeight = null;
@@ -67,6 +68,7 @@ class MainScript{
         this.navMenuItems.forEach(navMenu => {
             navMenu.addEventListener('click', (event) => {
                 event.preventDefault();
+                this.menuIcon.classList.remove('active');
                 let currentLink = navMenu.href.split('/')[3];
                 let targetElement = document.querySelector(`.content-body ${currentLink}`);
                 setTimeout(() => {
